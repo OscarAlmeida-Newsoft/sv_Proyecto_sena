@@ -21,7 +21,7 @@ Con el desarrollo de este proyecto se planea enseñar una simulacion sobre el de
 3. Restaurar proyecto y compilar paquetes
 
 ## Componentes del sistema
-![alt text](docs/DiagramaComponentes.png)
+![alt text](docs/Diagrama-componentes.png)
 
 ## Modelo Entidad relacion
 ![alt text](docs/MER.png)
