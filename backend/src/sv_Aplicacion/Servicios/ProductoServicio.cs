@@ -12,6 +12,11 @@ namespace sv_Aplicacion.Servicios
     {
         private readonly IProductoRepositorio _ProductoRepositorio;
 
+        public ProductoServicio(IProductoRepositorio productoRepositorio)
+        {
+            _ProductoRepositorio = productoRepositorio;
+        }
+
         public void ActualizarProducto(Producto producto)
         {
             _ProductoRepositorio.ActualizarProducto(producto);
