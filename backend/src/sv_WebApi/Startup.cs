@@ -25,6 +25,10 @@ namespace sv_WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Suscripción a las dependencias
+            sv_Aplicacion.InyeccionDependencias.AgregarInfraestructura(services);
+            sv_Infraestructura.InyeccionDependencias.AgregarInfraestructura(services, Configuration);
+
             services.AddControllers();
         }
 

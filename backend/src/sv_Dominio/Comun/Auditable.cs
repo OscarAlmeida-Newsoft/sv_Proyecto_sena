@@ -8,7 +8,7 @@ namespace sv_Dominio.Comun
     {
         public string IdCreador { get; set; }
         public DateTime FechaCreacion { get; set; }
-        public DateTime FechaModificacion { get; set; }
-        public string IdModificador { get; set; }
+        public DateTime? FechaModificacion { get; set; }
+        public string? IdModificador { get; set; }
     }
 }

@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace sv_Aplicacion.IServicios
 {
-    public interface IProductosServicios
+    public interface IProductoServicios
     {
         void CrearProducto(Producto producto);
         Task<IEnumerable<Producto>> ObtenerProductos();
         Task<Producto> ObtenerProductoPorId(int id);
-        void ActualizarProducto(Producto producto);
+        void ActualizarProducto(int id, Producto producto);
         void EliminarProducto(int id);
         Task<bool> GuardarCambios();
     }

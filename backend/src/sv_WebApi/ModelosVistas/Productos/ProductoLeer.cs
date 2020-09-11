@@ -1,12 +1,11 @@
-﻿using sv_Dominio.Comun;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 
-namespace sv_Dominio.Entidades
+namespace sv_WebApi.ModelosVistas.Productos
 {
-    public class Producto: Auditable
+    public class ProductoLeer
     {
         public int Id { get; set; }
         public string Nombre { get; set; }

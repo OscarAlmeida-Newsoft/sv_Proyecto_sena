@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace sv_Aplicacion.Servicios
 {
-    public class ProductoServicio : IProductosServicios
+    public class ProductoServicio : IProductoServicios
     {
         private readonly IProductoRepositorio _ProductoRepositorio;
 
@@ -17,14 +17,27 @@ namespace sv_Aplicacion.Servicios
             _ProductoRepositorio = productoRepositorio;
         }
 
-        public void ActualizarProducto(Producto producto)
+        public void ActualizarProducto(int id, Producto producto)
         {
-            _ProductoRepositorio.ActualizarProducto(producto);
+            var validar = _ProductoRepositorio.ObtenerProductoPorId(id);
+
+            if (id != validar.Id) throw new Exception();
+
+            try
+            {
+                _ProductoRepositorio.ActualizarProducto(producto);
+
+            } catch (Exception)
+            {
+                throw new Exception();
+            }
+
+
         }
 
         public void CrearProducto(Producto producto)
         {
-            _ProductoRepositorio.CrearProducto(producto);            
+            _ProductoRepositorio.CrearProducto(producto);
         }
 
         public void EliminarProducto(int id)

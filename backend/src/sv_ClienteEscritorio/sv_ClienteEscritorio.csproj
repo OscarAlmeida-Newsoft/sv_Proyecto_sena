@@ -6,4 +6,9 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\sv_Aplicacion\sv_Aplicacion.csproj" />
+    <ProjectReference Include="..\sv_Infraestructura\sv_Infraestructura.csproj" />
+  </ItemGroup>
+
 </Project>

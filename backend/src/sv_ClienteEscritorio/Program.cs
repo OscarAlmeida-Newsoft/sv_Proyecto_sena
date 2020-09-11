@@ -1,3 +1,4 @@
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,19 @@ namespace sv_ClienteEscritorio
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            var services = new ServiceCollection();
+            InyectarDependencias(services);
+            using (var serviceProvider = services.BuildServiceProvider())
+            {
+                Application.Run(new Vistas.AgregarProducto());
+            }
+
+        }
+
+        public static void InyectarDependencias(IServiceCollection services)
+        {
+            sv_Aplicacion.InyeccionDependencias.AgregarInfraestructura(services);
         }
     }
 }
